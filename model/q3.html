@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h2{
+            color: rgb(2, 75, 51);
+        }
+        p{
+            color: cadetblue;
+        }
+        .sim{
+            color: chocolate;
+        }
+        #okay{
+            color: blue;
+        }
+        .box {
+            padding: 20px;
+            border: 12px black solid;
+            border-radius: 20px;
+            border-width: 5px;
+            margin: 10px;
+        }
+        .text {
+            text-shadow: 2px 1px 2px rgb(255, 0, 128);
+            font-size: larger;
+        }
+        .animated {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            animation: myAnimation 2s ease infinite;
+        }
+
+        @keyframes myAnimation {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.5);}
+            100% {transform: scale(1);}
+        }
+        .container {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            background-color: lightcoral;
+            transition: background-color 2s ease;
+        }
+        .container:hover{
+            background-color: lightblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="color: crimson;">Hey This is inline styling</h1>
+    <h2>This is internal styling</h2>
+    <h3>This is external styling</h3>
+    <p>Simple paragraph selector</p>
+    <p class="sim">Class selector</p>
+    <p id="okay">Id selector</p>
+    <h2>Box model</h2>
+    <img src="camera.jpg" alt="" height="90px" class="box">
+    <p class="text">Text Effects</p>
+    <h2>Animation</h2>
+    <div class="animated"></div>
+    <br>
+    <h2>Transition</h2>
+    <div class="container">Transition</div>
+</body>
+</html>

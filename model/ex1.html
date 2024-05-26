@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Exam Preparation</title>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+        td, th {
+            background-color: aqua;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+        }
+        .ani {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .ani:hover {
+            width: 300px;
+            background-color: tomato;
+        }
+        .ani{
+            transition: width 2s;
+        }
+    </style>
+</head>
+<body style="background-color: powderblue;">
+    <h1 style="background-color: tomato; text-align: center;">Hello World!</h1>
+    <p title="I am a tootltip">Most Commonly Used Phrase</p>
+    <a href="https://www.google.com/" target="_blank">Google</a>
+    <br>
+    <img src="camera.jpg" alt="Camera" height="120" width="180">
+    <hr>
+    <h2>Formatting</h2>
+    <pre>
+        Hey This is Selcia
+        I am a web programmer
+    </pre>
+    <p>
+        <b>This is bold - </b>
+        <strong>This is strong - </strong>
+        <i>This is italic - </i>
+        <del>This is deleted - </del>
+        <em>This is emphasized - </em>
+        <mark>This is marked - </mark>
+        <small>This is small - </small>
+        <ins>This is inserted - </ins>
+        <sub>This is subscript - </sub>
+        <sup>This is superscript</sup>
+    </p>
+    <h2>Quotation and Citation Elements</h2>
+    <p style="background-image: url(camera.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">Here is a quote from Google</p>
+    <blockquote cite="https://www.google.com/">Google</blockquote>
+    <q>God is greater</q>
+    <abbr title="World Health Organization">WHO</abbr>
+    <address>This is my address</address>
+    <bdo dir="rtl">Right to left</bdo>
+    <!--Comments-->
+
+    <h2>Hotspot Creation</h2>
+    <img src="camera.jpg" alt="camera" usemap="#workmap">
+    <map name="workmap">
+        <area shape="circle" coords="668,382,42" href="" alt="" onclick="myFunction()">
+        <area shape="rect" coords="327,328,411,460" href="" onclick="myFunction()">
+    </map>
+
+    <h2>Lists</h2>
+    <ul>
+        <li>Selcia</li>
+        <li>Jebicia</li>
+    </ul>
+
+    <ol>
+        <li>Selcia</li>
+        <li>Jebicia</li>
+    </ol>
+
+    <dl>
+        <dt>Milk</dt>
+        <dl>Used to make coffee</dl>
+    </dl>
+
+    <h2>Table</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+        <tr>
+            <td>Selcia</td>
+            <td>Myself</td>
+        </tr>
+        <tr>
+            <td>Jebicia</td>
+            <td>Sister</td>
+        </tr>
+    </table>
+
+    <h2>Video</h2>
+    <video src="mov_bbb.mp4" controls></video>
+
+    <h2>Audio</h2>
+    <audio src="Don-Moen-God-Will-Make-a-Way-CeeNaija.com_.mp3"  controls></audio>
+
+    <h2>IFrame</h2>
+    <iframe src="https://www.youtube.com/embed/1zo3fJYtS-o" frameborder="80"></iframe>
+
+    <h2>Geo-Location</h2>
+    <button onclick="getLocation()">Get Current Location</button>
+    <p id="demo"></p>
+
+    <h2>Canvas</h2>
+    <canvas id="myCanvas" width="300" height="150"></canvas>
+
+    <h2>SVG</h2>
+    <div>
+        <svg width="100%" height="100%" style="padding: 20px; margin:20px;">
+        <circle cx="50" cy="50" r="50" stroke="black" stroke-width="4" fill="yellow">
+            <animate attributeName="r" from="50" to="40" dur="1s" repeatCount="indefinite"></animate>
+        </circle>
+    </svg>
+</div>
+
+    <h2>Animation</h2>
+    <div class="ani">
+        This is Animation
+    </div>
+    
+    <h2>Form Validation</h2>
+    <form action="" onsubmit="return validateForm()">
+        <label for="name">Name: </label>
+        <input type="text" id="name" value="Enter Name">
+        <br>
+        <label for="creditcard">Credit Card: </label>
+        <input type="text" id="creditcard" value="Enter Credit Card">
+        <br>
+        <label for="cvv">CVV: </label>
+        <input type="text" id="cvv" value="Enter CVV">
+        <br>
+        <label for="expirymonth">Expiry Month: </label>
+        <input type="month" id="expiryMonth">
+        <br>
+        <label for="expiryyear">Expiry Year: </label>
+        <select name="expiryyear" id="expiryyear">
+            <option value="">--Select Year--</option>
+            <option value="2025">2025</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    const myCanvas = document.getElementById("myCanvas");
+    const ctx = myCanvas.getContext("2d");
+
+    ctx.fillStyle = "black;"
+    ctx.strokeRect(20, 20, 150, 100);
+    ctx.strokeText("Selcia")
+
+    var x = document.getElementById("demo");
+    function myFunction(){
+        alert("You clicked on lens");
+    }
+
+    function getLocation(){
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+        } else {
+            x.innerHTML = 'Geolocation is not supported in this browser';
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: "+ position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+    }
+
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var creditcard = document.getElementById("creditcard").value;
+        var cvv = document.getElementById('cvv').value;
+        var expirymonth = document.getElementById('expirymonth').value;
+        var expiryyear = document.getElementById('expiryyear').value;
+
+        var nameRegex = /^[A-Za-z]+$/;
+        var creditcardRegex = /^\d{4}-?\d{4}-?\d{4}$/;
+        var cvvRegex = /^\d{3,4}$/;
+
+        if (name === "" || creditcard === "" || cvv === "" || expirymonth === "" || expiryyear === ""){
+            alert("Please fill all fields");
+            return false;
+        }
+        if (!name.match(nameRegex)) {
+            alert("Name only alphabets");
+            return false;
+        }
+        if (!creditcard.match(creditcardRegex)) {
+            alert("Invalid credit card");
+            return false;
+        }
+        if (!cvv.match(cvvRegex)) {
+            alert("Invalid cvv");
+            return false;
+        }
+
+        var currentDate = new Date;
+        var currentMonth = currentDate.getMonth()+1;
+        var currentYear = currentDate.getFullYear();
+
+        if (parseInt(expiryyear) < currentYear || parseInt(expiryyear) === currentYear && parseInt(expirymonth) < currentMonth){
+            alert("Enter future");
+            return false;
+        }
+        return true;
+    }
+</script>
+</html>

@@ -1,0 +1,22 @@
+<%= form_with(model: usn) do |form| %>
+  <% if usn.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(usn.errors.count, "error") %> prohibited this usn from being saved:</h2>
+
+      <ul>
+        <% usn.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :usn, style: "display: block" %>
+    <%= form.text_field :usn, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

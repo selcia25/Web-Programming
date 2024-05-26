@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Students</h1>
+
+<%= form_tag search_students_path, method: :post do %>
+  <%= text_field_tag :ssn, params[:ssn], placeholder: 'Enter SSN...' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<% if @students.any? %>
+  <h2>Search Result</h2>
+  <% @students.each do |student| %>
+    <%= render student %>
+    <p>
+      <%= link_to "Show this student", student %>
+    </p>
+  <% end %>
+<% else %>
+  <div id="students">
+    No students found.
+  </div>
+<% end %>
+
+<%= link_to "New student", new_student_path %>
+

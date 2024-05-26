@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function validateForm() {
+      var name = document.getElementById('name').value;
+      var creditCard = document.getElementById('creditCard').value;
+      var cvv = document.getElementById('cvv').value;
+      var expiryMonth = document.getElementById('expiryMonth').value;
+      var expiryYear = document.getElementById('expiryYear').value;
+
+      // Regular expressions for validation
+      var nameRegex = /^[A-Za-z]+$/;
+      var creditCardRegex = /^\d{4}-?\d{4}-?\d{4}-?\d{4}$/;
+      var cvvRegex = /^\d{3,4}$/;
+
+      // Validation checks
+      if (name === "" || creditCard === "" || cvv === "" || expiryMonth === "" || expiryYear === "") {
+        alert("Please fill in all fields");
+        return false;
+      }
+      if (!name.match(nameRegex)) {
+        alert("Name can only contain alphabets");
+        return false;
+      }
+      if (!creditCard.match(creditCardRegex)) {
+        alert("Invalid credit card number");
+        return false;
+      }
+      if (!cvv.match(cvvRegex)) {
+        alert("Invalid CVV");
+        return false;
+      }
+
+      // Expiry date validation
+      var currentDate = new Date();
+      var currentYear = currentDate.getFullYear();
+      var currentMonth = currentDate.getMonth() + 1; // Month is zero-indexed
+
+      if (parseInt(expiryYear) < currentYear || (parseInt(expiryYear) === currentYear && parseInt(expiryMonth) < currentMonth)) {
+        alert("Expiry date must be in the future");
+        return false;
+      }
+
+      // If all validations pass, move focus to the next input field
+      document.getElementById('cvv').focus();
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Form Validation</h2>
+  <form onsubmit="return validateForm()">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="creditCard">Credit Card Number:</label><br>
+    <input type="text" id="creditCard" name="creditCard"><br><br>
+
+    <label for="cvv">CVV:</label><br>
+    <input type="text" id="cvv" name="cvv"><br><br>
+
+    <label for="expiryMonth">Expiry Month:</label>
+    <select id="expiryMonth" name="expiryMonth">
+      <option value="">--Select Month--</option>
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select><br><br>
+
+    <label for="expiryYear">Expiry Year:</label>
+    <select id="expiryYear" name="expiryYear">
+      <option value="">--Select Year--</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+      <option value="2028">2028</option>
+      <option value="2029">2029</option>
+      <option value="2030">2030</option>
+      <option value="2031">2031</option>
+      <option value="2032">2032</option>
+      <option value="2033">2033</option>
+      <option value="2034">2034</option>
+      <option value="2035">2035</option>
+      <option value="2036">2036</option>
+    </select><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

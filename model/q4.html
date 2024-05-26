@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Header</h1></header>
+    <nav>
+        <ul>
+            <a href="">About</a>
+            <a href="">About</a>
+            <a href="">About</a>
+        </ul>
+    </nav>
+    <section>
+        <h1>Section</h1>
+        <h2>Audio</h2>
+        <audio src="Don-Moen-God-Will-Make-a-Way-CeeNaija.com_.mp3" controls></audio>
+        <h2>Video</h2>
+        <video src="mov_bbb.mp4" controls></video>
+        <h2>Form</h2>
+        <input type="date" name="" id="">
+        <input type="color" name="" id="">
+        <h2>Canvas</h2>
+        <canvas id="myCanvas" width="200" height="100"></canvas>
+        <h2>Scalable Vector Graphics</h2>
+        <svg width="100" height="100">
+            <circle cx="50" cy="50" r="40" fill="green">
+                <animate attributeName="r" from="40" to="50" repeatCount="indefinite" dur="1s"></animate>
+            </circle>
+        </svg>
+        <h2>GeoLocation</h2>
+        <button onclick="myLocation()">Get Location</button>
+        <p id="x"></p>
+    </section>
+    <footer>Footer</footer>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'red';
+        ctx.fillRect(0, 0, 200, 100);
+
+        var x = document.getElementById("x");
+        function myLocation(){
+            if (navigator.geolocation){
+                navigator.geolocation.watchPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation not found";
+            }
+        }
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude;
+        }
+    </script>
+</body>
+</html>

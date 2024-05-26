@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML 5 Tags Example</title>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <article>
+            <h2>Article Title</h2>
+            <p>Article content goes here.</p>
+        </article>
+    </section>
+
+    <aside>
+        <h3>Aside Content</h3>
+        <p>Additional content goes here.</p>
+    </aside>
+
+    <footer>
+        <p>Footer content goes here.</p>
+    </footer>
+
+    <audio controls>
+        <source src="example.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <video controls>
+        <source src="example.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="date" name="date">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <mark>This text is highlighted for reference.</mark>
+
+    <time datetime="2022-05-26">May 26, 2022</time>
+
+    <progress value="40" max="100"></progress>
+    "htt"
+    <meter value="3" min="0" max="5">3 out of 5</meter>
+
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'green';
+        ctx.fillRect(5, 15, 150, 80);
+    </script>
+
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" fill="red" />
+    </svg>
+
+    <details>
+        <summary>More Info</summary>
+        <p>Additional information goes here.</p>
+    </details>
+</body>
+</html>

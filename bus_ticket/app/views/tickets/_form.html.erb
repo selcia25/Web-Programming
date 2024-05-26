@@ -1,0 +1,57 @@
+<%= form_with(model: ticket) do |form| %>
+  <% if ticket.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+        <% ticket.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div>
+    <%= form.label :no_passengers, style: "display: block" %>
+    <%= form.number_field :no_passengers %>
+  </div>
+
+  <div>
+    <%= form.label :passenger_name, style: "display: block" %>
+    <%= form.text_field :passenger_name %>
+  </div>
+
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div>
+    <%= form.label :source_station, "Source Station", style: "display: block" %>
+    <%= form.select :source_station, [['Station 1', 'station_1'], ['Station 2', 'station_2'], ['Station 3', 'station_3']] %>
+  </div>
+
+  <div>
+    <%= form.label :dest_station, "Destination Station", style: "display: block" %>
+    <%= form.select :dest_station, [['Station 1', 'station_1'], ['Station 2', 'station_2'], ['Station 3', 'station_3']] %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

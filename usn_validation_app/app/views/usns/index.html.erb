@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Usns</h1>
+
+<div id="usns">
+  <% @usns.each do |usn| %>
+    <%= render usn %>
+    <p>
+      <%= link_to "Show this usn", usn %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New usn", new_usn_path %>

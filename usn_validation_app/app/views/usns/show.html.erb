@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @usn %>
+
+<div>
+  <%= link_to "Edit this usn", edit_usn_path(@usn) %> |
+  <%= link_to "Back to usns", usns_path %>
+
+  <%= button_to "Destroy this usn", @usn, method: :delete %>
+</div>

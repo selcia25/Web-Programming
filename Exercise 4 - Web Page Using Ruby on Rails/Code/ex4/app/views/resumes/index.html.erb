@@ -1,0 +1,11 @@
+<!-- app/views/resumes/index.html.erb -->
+<h1>Resume</h1>
+<% @resumes.each do |resume| %>
+ <h2><%= resume.name %></h2>
+ <p><strong>Email:</strong> <%= resume.email %></p>
+ <p><strong>Phone:</strong> <%= resume.phone %></p>
+ <p><strong>Summary:</strong> <%= resume.summary %></p>
+ <p><strong>Education:</strong> <%= resume.education %></p>
+ <p><strong>Experience:</strong> <%= resume.experience %></p>
+ <p><strong>Skills:</strong> <%= resume.skills %></p>
+<% end %>

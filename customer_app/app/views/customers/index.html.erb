@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<div id="customers">
+  <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Gender</th>
+      <th>Favourite</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.contact %></td>
+      <td><%= customer.gender %></td>
+      <td><%= customer.favourite %></td>
+      <td><%= link_to "Show this customer", customer %></td>
+
+    </tr>
+    
+  <% end %>
+  </tbody>
+  </table>
+</div>
+
+<%= link_to "New customer", new_customer_path %>
